@@ -31,15 +31,6 @@ export const Navigation = () => {
 					<Title>CryptoCompare</Title>
 				</Brand>
 				<Options as="ul">
-					<li>
-						<a href="#">Home</a>
-					</li>
-					<li>
-						<a href="#">Compare</a>
-					</li>
-					<li>
-						<a href="#">Credits</a>
-					</li>
 				</Options>
 			</Container>
 		</DarkNavigation>

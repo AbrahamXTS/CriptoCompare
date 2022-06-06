@@ -1,12 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Select, Option } from "./Select";
 import { currencies, getCriptoList, getInfo } from '../data';
+import styled from '@emotion/styled';
 
-export const Form = ({ 
-        moneda, setMoneda, 
-        cripto, setCripto, 
-        setIsLoading, setIsInfoReady, setCriptoInfo 
-}) => {
+const Formulario = styled.form`
+    width: 100%;
+
+    @media (min-width: 650px) {
+        width: 60rem;
+    }
+`;
+
+const Submit = styled.input`
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary);
+    
+    @media (max-width: 650px) {
+        width: 100%;
+    }
+`;
+
+export const Form = ({ moneda, setMoneda, cripto, setCripto, setIsLoading, setIsInfoReady, setCriptoInfo }) => {
 
     const [criptoList, setCriptoList] = useState([]);
 
@@ -29,7 +45,7 @@ export const Form = ({
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Formulario onSubmit={handleSubmit}>
             <Select label="Selecciona tu moneda local:" name="monedas" setState={setMoneda} >
                 {currencies.map(({id, nombre}) => <Option key={id} value={id}>{nombre}</Option>)}
             </Select>
@@ -39,7 +55,7 @@ export const Form = ({
                     return <Option key={Name} value={Name}>{FullName}</Option>
                 })}
             </Select>
-            <input type="submit" value="Consultar" />
-        </form>
+            <Submit type="submit" value="Consultar" />
+        </Formulario>
     )
 }

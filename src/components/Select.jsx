@@ -2,17 +2,18 @@ import styled from '@emotion/styled';
 
 const Field = styled.div`
     display: flex;
-    flex-direction: column;
     margin-bottom: 2rem;
+    flex-direction: column;
 `;
 
 const Label = styled.label`
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 0.3rem;
 `;
 
 const Selector = styled.select`
-    width: 40rem;
+    width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: var(--primary);

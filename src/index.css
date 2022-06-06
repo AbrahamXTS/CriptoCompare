@@ -32,6 +32,7 @@ body {
 	line-height: inherit;
 	font-family: "Roboto", sans-serif;
 	color: var(--text-primary);
+	background-color: var(--background);
 }
 
 hr {
